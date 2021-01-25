@@ -5,7 +5,7 @@ import argparse
 import csv
 from operator import itemgetter
 
-"""A lot of this code is from @octohub on github. Tweaked a few things here and there to make it compatible to my specific needs.
+"""A lot of this code is from @octohub on github. Tweaked a few things here and there for functionality.
 Enjoy groupme shaming your friends. -kcho """
 
 def get_groups():
@@ -93,10 +93,6 @@ def analyze_group(group, users, message_count):
     return users
 
 
-
-
-
-
 def display_data(users):
     sort_this = []
 
@@ -126,7 +122,7 @@ def display_data(users):
             num_of_winners += 1
 
 
-    print("Not Winners: shut the fuck up (worst likes per message ratio):")
+    print("Not Winners: (worst likes per message ratio):")
     sort_this = sorted(sort_this, key=itemgetter('likes_per_message'), reverse = False)
 
 
@@ -139,7 +135,6 @@ def display_data(users):
         else:
             print(str(num_of_not_winners) + ". " + user["name"] + ": " + str(user['likes_per_message']))
             num_of_not_winners += 1
-
 
 
 def save(users):
