@@ -113,7 +113,7 @@ def display_data(users):
 
     num_of_winners = 0
     for user in sort_this:
-        if user['messages_sent'] < 5:
+        if user['messages_sent'] < 3:
             continue
         elif num_of_winners > 9:
             break
